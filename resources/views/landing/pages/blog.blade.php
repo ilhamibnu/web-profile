@@ -7,7 +7,7 @@
             <div class="banner_inner d-flex align-items-center">
                 <div class="container">
                     <div class="banner_content text-center">
-                        <h2>Blog Details</h2>
+                        <h2>Blog</h2>
                         <div class="page_link">
                             <a href="/">Home</a>
                             <a href="/blog">Blog</a>
