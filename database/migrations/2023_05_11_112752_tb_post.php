@@ -10,10 +10,10 @@ return new class extends Migration
     {
         Schema::create('tb_post', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
+            $table->text('judul');
             $table->text('image')->nullable();
-            $table->string('sub')->unique();
-            $table->string('desc');
+            $table->text('sub')->nullable();
+            $table->text('desc');
             $table->timestamps();
         });
     }

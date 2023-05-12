@@ -25,8 +25,11 @@ class User extends Authenticatable
     protected $table = 'tb_user';
     protected $fillable = [
         'name',
+        'tag',
+        'desc',
+        'phone',
+        'address',
         'image',
-        'username',
         'email',
         'password',
     ];

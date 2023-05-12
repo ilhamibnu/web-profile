@@ -16,6 +16,7 @@
                     <ul class="nav navbar-nav menu_nav ml-auto">
                         <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login">login</a></li>
                     </ul>
                 </div>
             </div>

@@ -13,15 +13,14 @@ return new class extends Migration
     {
         Schema::create('tb_user', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->text('name');
             $table->text('image')->nullable();
             $table->text('tag')->nullable();
             $table->text('desc')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('address')->nullable();
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->string('email')->unique();
+            $table->text('phone')->nullable();
+            $table->text('address')->nullable();
+            $table->text('password');
+            $table->text('email')->unique();
             $table->timestamps();
         });
     }

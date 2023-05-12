@@ -5,10 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Focus - Bootstrap Admin Dashboard </title>
+    <title>Focus - Login</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/images/favicon.png') }}">
+    <link rel="icon" href="{{ asset('landing/img/favicon.png') }}" type="image/png">
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/vendor/sweetalert2/dist/sweetalert2.min.css') }}" rel="stylesheet">
 
 </head>
 
@@ -22,36 +23,24 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <h4 class="text-center mb-4">Sign in your account</h4>
-                                    <form action="index.html">
+                                    <form action="/login" method="POST">
+                                        @csrf
+                                        @method('POST')
                                         <div class="form-group">
                                             <label><strong>Email</strong></label>
-                                            <input type="email" class="form-control" value="hello@example.com">
+                                            <input type="email" name="email" class="form-control"
+                                                value="{{ Session::get('email') }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label><strong>Password</strong></label>
-                                            <input type="password" class="form-control" value="Password">
+                                            <input type="password" name="password" class="form-control"
+                                                value="{{ Session::get('password') }}" required>
                                         </div>
-                                        <div class="form-row d-flex justify-content-between mt-4 mb-2">
-                                            <div class="form-group">
-                                                <div class="form-check ml-2">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="basic_checkbox_1">
-                                                    <label class="form-check-label" for="basic_checkbox_1">Remember
-                                                        me</label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <a href="page-forgot-password.html">Forgot Password?</a>
-                                            </div>
-                                        </div>
+
                                         <div class="text-center">
                                             <button type="submit" class="btn btn-primary btn-block">Sign me in</button>
                                         </div>
                                     </form>
-                                    <div class="new-account mt-3">
-                                        <p>Don't have an account? <a class="text-primary"
-                                                href="./page-register.html">Sign up</a></p>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +58,39 @@
     <script src="{{ asset('admin/vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('admin/js/quixnav-init.js') }}"></script>
     <script src="{{ asset('admin/js/custom.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+    <script src="{{ asset('admin/js/plugins-init/sweetalert.init.js') }}"></script>
 
 </body>
 
 </html>
+
+@if (Session::get('belumlogin'))
+    <script>
+        swal("Opps Error", "Silahkan Login Dulu", "error");
+    </script>
+@endif
+
+@if (Session::get('loginerror'))
+    <script>
+        swal("Opps Error", "Login Gagal", "error");
+    </script>
+@endif
+
+@if (Session::get('bukanadmin'))
+    <script>
+        swal("Opps Error", "Anda Bukan Admin", "error");
+    </script>
+@endif
+
+@if (Session::get('failed'))
+    <script>
+        swal("Opps Error", "Login Gagal", "error");
+    </script>
+@endif
+
+@if (Session::get('logout'))
+    <script>
+        swal("Well Done", "Anda Berhasil Logout", "success");
+    </script>
+@endif
