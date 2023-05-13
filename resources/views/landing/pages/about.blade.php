@@ -8,7 +8,7 @@
                     @foreach ($user as $data)
                         <div class="media">
                             <div class="d-flex">
-                                <img src="{{ asset('admin/foto/user/' . $data['image']) }}" alt="">
+                                <img src="{{ asset('admin/foto/user/' . $data['image']) }}" width="800px" height="800px" alt="">
                             </div>
                             <div class="media-body">
 

@@ -123,6 +123,9 @@ class PostController extends Controller
                 'id_user.required' => 'User tidak boleh kosong'
             ]);
 
+            $deleteimg = Post::where('id', $id)->first();
+            File::delete(public_path('admin/foto/post') . '/' . $deleteimg->image);
+
             $fileNameImage = time() . '.' . $request->image->extension();
             $request->image->move(public_path('admin/foto/post/'), $fileNameImage);;
 
