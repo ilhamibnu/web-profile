@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
 
 
 
@@ -51,6 +52,8 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+    
+
         $request->validate([
             'judul' => 'required',
             'sub' => 'required',
@@ -84,6 +87,8 @@ class PostController extends Controller
 
     public function updatepost(Request $request, $id)
     {
+
+        
         if ($request->image == null) {
             $request->validate([
                 'judul' => 'required',

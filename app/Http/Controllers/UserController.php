@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Database\QueryException;
 
 class UserController extends Controller
@@ -23,6 +24,8 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+  
+
 
         $request->validate([
             'name' => 'required|max:30',
@@ -81,6 +84,9 @@ class UserController extends Controller
 
     public function updateuser(Request $request, $id)
     {
+   
+
+
         if ($request->image == null && $request->password == null) {
             $request->validate([
                 'name' => 'required|max:30',
