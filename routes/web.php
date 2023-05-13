@@ -16,12 +16,6 @@ use App\Http\Controllers\UserController;
 |
 */
 
-// Route::get('/pengingat', [PengingatController::class, 'index'])->middleware('IsLogin');
-// Route::post('/pengingat', [PengingatController::class, 'create'])->middleware('IsLogin');
-// Route::put('/pengingat-update/{id}', [PengingatController::class, 'update'])->middleware('IsLogin');
-// Route::delete('/pengingat-delete/{id}', [PengingatController::class, 'delete'])->middleware('IsLogin');
-
-
 Route::get('/', [UserController::class, 'indexlanding']);
 Route::get('/about', [UserController::class, 'indexlanding']);
 Route::get('/blog', [PostController::class, 'indexpostlanding']);
@@ -41,4 +35,4 @@ Route::put('/post-update/{id}', [PostController::class, 'updatepost'])->middlewa
 Route::delete('/post-delete/{id}', [PostController::class, 'deletepost'])->middleware('IsLogin');
 
 Route::post('/login', [AuthController::class, 'authenticate']);
-Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/logout', [AuthController::class, 'logout'])->middleware('IsLogin');
