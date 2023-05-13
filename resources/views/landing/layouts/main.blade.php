@@ -1,63 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+    <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="{{ asset('landing/img/favicon.png') }}" type="image/png">
-    <title>MeetMe Personal</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('landing/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/vendors/linericon/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/vendors/owl-carousel/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/vendors/lightbox/simpleLightbox.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/vendors/nice-select/css/nice-select.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/vendors/animate-css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/vendors/popup/magnific-popup.css') }}">
-    <!-- main css -->
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('landing/css/open-iconic-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('landing/css/animate.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('landing/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('landing/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('landing/css/magnific-popup.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('landing/css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('landing/css/ionicons.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('landing/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('landing/css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('landing/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/css/responsive.css') }}">
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-    <!--================Header Menu Area =================-->
-    @include('landing.partials.header')
-    <!--================Header Menu Area =================-->
 
-    <!--================Contet =================-->
+    @include('landing.partials.navbar')
 
     @yield('content')
 
-    <!--================End Contet =================-->
-
-
-    <!--================Footer Area =================-->
     @include('landing.partials.footer')
-    <!--================End Footer Area =================-->
 
 
 
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4"
+                stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4"
+                stroke-miterlimit="10" stroke="#F96D00" />
+        </svg></div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{ asset('landing/js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ asset('landing/js/popper.js') }}"></script>
+
+    <script src="{{ asset('landing/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('landing/js/jquery-migrate-3.0.1.min.js') }}"></script>
+    <script src="{{ asset('landing/js/popper.min.js') }}"></script>
     <script src="{{ asset('landing/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('landing/js/stellar.js') }}"></script>
-    <script src="{{ asset('landing/vendors/lightbox/simpleLightbox.min.js') }}"></script>
-    <script src="{{ asset('landing/vendors/nice-select/js/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ asset('landing/vendors/isotope/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('landing/vendors/isotope/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('landing/vendors/owl-carousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('landing/vendors/popup/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('landing/js/jquery.ajaxchimp.min.js') }}"></script>
-    <script src="{{ asset('landing/vendors/counter-up/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('landing/vendors/counter-up/jquery.counterup.min.js') }}"></script>
-    <script src="{{ asset('landing/js/mail-script.js') }}"></script>
-    <script src="{{ asset('landing/js/theme.js') }}"></script>
+    <script src="{{ asset('landing/js/jquery.easing.1.3.js') }}"></script>
+    <script src="{{ asset('landing/js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('landing/js/jquery.stellar.min.js') }}"></script>
+    <script src="{{ asset('landing/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('landing/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('landing/js/aos.js') }}"></script>
+    <script src="{{ asset('landing/js/jquery.animateNumber.min.js') }}"></script>
+    <script src="{{ asset('landing/js/scrollax.min.js') }}"></script>
+
+    <script src="{{ asset('landing/js/main.js') }}"></script>
+
 </body>
 
 </html>

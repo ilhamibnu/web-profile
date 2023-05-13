@@ -12,19 +12,19 @@ use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
-    public function indexpostlanding()
-    {
-        $user = User::all();
-        $posts = Post::with('user')->simplePaginate(5);
-        return view(
-            'landing.pages.blog',
-            [
-                'post' => $posts,
-                'user' => $user
+    // public function indexpostlanding()
+    // {
+    //     $user = User::all();
+    //     $posts = Post::with('user')->simplePaginate(5);
+    //     return view(
+    //         'landing.pages.blog',
+    //         [
+    //             'post' => $posts,
+    //             'user' => $user
 
-            ]
-        );
-    }
+    //         ]
+    //     );
+    // }
 
     public function detailpostlanding($id)
     {

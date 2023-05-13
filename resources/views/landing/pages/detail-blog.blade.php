@@ -1,79 +1,35 @@
 @extends('landing.layouts.main')
 
+@section('title')
+    Detail Blog | {{ $post->judul }}
+@endsection
+
 @section('content')
-    <section class="banner_area">
-        <div class="box_1620">
-            <div class="banner_inner d-flex align-items-center">
-                <div class="container">
-                    <div class="banner_content text-center">
-                        <h2>Blog Details</h2>
-                        <div class="page_link">
-                            <a href="/">Home</a>
-                            <a href="/blog">Blog</a>
-                            <a href="single-blog.html">Blog Details</a>
-                        </div>
-                    </div>
+    <section class="hero-wrap js-fullheight" style="background-image: url({{ asset('landing/images/bg_1.jpg') }});"
+        data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+                <div class="col-md-12 ftco-animate pb-5 mb-3 text-center">
+                    <h1 class="mb-3 bread">Blog Single Post</h1>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i
+                                    class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"><a
+                                href="/#blog-section">Blog <i class="ion-ios-arrow-forward"></i></a></span> <span>Blog
+                            Single <i class="ion-ios-arrow-forward"></i></span></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="blog_area single-post-area p_120">
+    <section class="ftco-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 posts-list">
-
-                    <div class="single-post row">
-                        <div class="col-lg-12">
-                            <div class="feature-img">
-                                <img class="img-fluid" src="{{ asset('admin/foto/post/' . $post['image']) }}"
-                                    alt="">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-9 col-md-9 blog_details">
-                            <h2>{{ $post->judul }}</h2>
-                            <p class="excert">
-                                {{ $post->desc }}
-                            </p>
-                        </div>
-                        {{-- <div class="col-lg-12">
-                            <div class="quotes">
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why
-                                you should have to spend money on boot camp when you can get the MCSE study materials
-                                yourself at a fraction of the camp price. However, who has the willpower to actually sit
-                                through a self-imposed MCSE training.
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <img class="img-fluid" src="img/blog/post-img1.jpg" alt="">
-                                </div>
-                                <div class="col-6">
-                                    <img class="img-fluid" src="img/blog/post-img2.jpg" alt="">
-                                </div>
-                                <div class="col-lg-12 mt-25">
-                                    <p>
-                                        MCSE boot camps have its supporters and its detractors. Some people do not
-                                        understand why you should have to spend money on boot camp when you can get the
-                                        MCSE
-                                        study materials yourself at a fraction of the camp price. However, who has the
-                                        willpower.
-                                    </p>
-                                    <p>
-                                        MCSE boot camps have its supporters and its detractors. Some people do not
-                                        understand why you should have to spend money on boot camp when you can get the
-                                        MCSE
-                                        study materials yourself at a fraction of the camp price. However, who has the
-                                        willpower.
-                                    </p>
-                                </div>
-                            </div>
-                        </div> --}}
-                    </div>
-
+                <div class="col-lg-8 ftco-animate">
+                    <img src="{{ asset('admin/foto/post/' . $post['image']) }}" alt="" class="img-fluid">
+                    <br></br>
+                    <h2 class="mb-3">{{ $post->judul }}</h2>
+                    <p>{{ $post->desc }}</p>
                 </div>
-
             </div>
         </div>
     </section>

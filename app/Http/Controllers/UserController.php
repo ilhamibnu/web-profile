@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -13,7 +14,13 @@ class UserController extends Controller
     public function indexlanding()
     {
         $user = User::all();
-        return view('landing.pages.about', ['user' => $user]);
+        $posts = Post::with('user')->simplePaginate(5);
+        return view('landing.pages.about', 
+        [
+
+        'user' => $user,
+        'post' => $posts,
+    ]);
     }
 
     public function indexadmin()
